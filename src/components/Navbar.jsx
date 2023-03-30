@@ -7,7 +7,6 @@ import { MdOutlineClose } from 'react-icons/md'
 import Logo from '../images/logo.png'
 import './navbar.css'
 
-
 const Navbar = () => {
   const [isNavShowing, setIsNavShowing] = useState(false)
   return (
