@@ -54,3 +54,12 @@
   color: var(--color-error)
 }
 
+/* MEDIA QUERIES ( medium screens ) */
+
+
+/* MEDIA QUERIES ( small screens ) */
+@media screen and (max-width: 440px) {
+  .login__input {
+    max-width: 24rem;
+  }
+}

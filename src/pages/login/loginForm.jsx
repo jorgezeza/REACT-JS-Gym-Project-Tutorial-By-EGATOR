@@ -1,15 +1,19 @@
+import { useContext } from 'react'
 import './login.css'
 import Input from '../../UI/formUi/Input'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import useForm from '../../hooks/useForm'
+import { AuthContext } from '../../contexts/auth'
 
 const LoginForm = () => {
-  const username = useForm()
+  const { createSignInWithEmailAndPassword } = useContext(AuthContext)
+  const email = useForm('email')
   const password = useForm('password')
 
-  console.log('UserName', {...username})
-  console.log('Password', {...password})
+  const handleSubmit = async event => {
+    event.preventDefault()
+    await createSignInWithEmailAndPassword(email.value, password.value)
+  }
 
   return (
     <>
@@ -17,9 +21,9 @@ const LoginForm = () => {
         <div className="container container__login" >
           <h1>Login</h1>
           <form className='container__login-form' >
-            <Input type='text' name='Username' className='login__input' {...username} />
+            <Input type='email' name='Email' className='login__input' {...email} />
             <Input type='password' name='Password' className='login__input' {...password} />
-            <button className='btn lg' >LOGIN</button>
+            <button className='btn lg' onClick={handleSubmit}>LOGIN</button>
             <Link>Forgot you password ?</Link>
           </form>
         </div>

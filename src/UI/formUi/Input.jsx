@@ -13,6 +13,7 @@ const Input = ({ type, name, className, value, onChange, onBlur, error }) => {
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        autoFocus={type === 'text' ? true : false}
       />
       {error && <p>{error}</p>}
     </div>
