@@ -1,12 +1,22 @@
+import Header from "../../components/Header"
+import ADMGym from "../../images/ADMGym.jpg"
+import NavbarADM from "../../components/NavbarADM"
+import { Routes, Route } from "react-router-dom"
+import "./admin.css"
+
 const Admin = () => {
   return (
     <>
-      <h1>ADMIN</h1>
-      <h1>ADMIN</h1>
+      <Header title='Dashboard' image={ADMGym} >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Dolor quidem saepe, dignissimos nobis et similique quae autem nam cumque modi.
+      </Header>
 
-      <h1>ADMIN</h1>
-      <h1>ADMIN</h1>
-      <h1>ADMIN</h1>
+      <Routes>
+        <Route path="/" element={<NavbarADM />} />
+      </Routes>
+
+
     </>
   )
 }

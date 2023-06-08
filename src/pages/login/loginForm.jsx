@@ -33,7 +33,7 @@ const LoginForm = () => {
         <div className='container container__login'>
           <h1>Register</h1>
           <p>Register a new user</p>
-          <Link to='/login/create' className='btn lg' >REGISTER</Link>
+          <Link to='/login/create' className='btn lg'>REGISTER</Link>
         </div>
       </section>
     </>

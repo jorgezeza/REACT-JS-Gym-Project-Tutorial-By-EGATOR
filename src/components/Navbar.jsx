@@ -45,6 +45,7 @@ const Navbar = () => {
         <ul className={`nav__links ${isNavShowing ? 'show_nav' : 'hide__nav'}`} >
           {links.map(({ name, path }, index) => {
             if (userLogin) {
+              console.log('Valor de USerLogin dentro do NAVv:', userLogin)
               return name !== 'Login' && makeLIS(name, path, index)
             }
             return makeLIS(name, path, index)

@@ -21,14 +21,15 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    onAuthStateChanged(auth, (userLogin) => {
-      if (userLogin) {
-        setIdUser(userLogin.uid)
-        navigate('/')
-        return
-      }
-    })
-  }, [userLogin, navigate])
+    const currentUser = auth.currentUser
+    console.log('Usuário Logado:', auth.currentUser)
+    if (currentUser) {
+      console.log('LOGADDOOOO !!!!')
+      setIdUser(currentUser.uid)
+      navigate('/')
+      return
+    }
+  }, [auth.currentUser])
 
   const register = async (username, email, password) => {
     await createUserWithEmailAndPassword(auth, email, password)
