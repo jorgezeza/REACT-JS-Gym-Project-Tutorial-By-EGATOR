@@ -1,6 +1,5 @@
 import { MdOutlineContentPasteGo } from "react-icons/md"
 import { NavLink } from "react-router-dom"
-// import {programs} from "../data"
 
 const NavbarADM = () => {
   return (
