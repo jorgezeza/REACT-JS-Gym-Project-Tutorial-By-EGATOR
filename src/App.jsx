@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {AuthProvider} from '../src/contexts/auth'
+import { AuthProvider } from '../src/contexts/auth'
+import { DbContentsProvider } from './contexts/db'
 
 import Home from './pages/home/Home'
 import About from './pages/about/About'
@@ -18,20 +19,22 @@ const App = () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Navbar />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='contact' element={<Contact />} />
-          <Route path='gallery' element={<Gallery />} />
-          <Route path='plans' element={<Plans />} />
-          <Route path='trainers' element={<Trainers />} />
-          <Route path='login/*' element={<Login />} />
-          <Route path='admin/*' element={<Admin />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <DbContentsProvider>
+          <Navbar />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='contact' element={<Contact />} />
+            <Route path='gallery' element={<Gallery />} />
+            <Route path='plans' element={<Plans />} />
+            <Route path='trainers' element={<Trainers />} />
+            <Route path='login/*' element={<Login />} />
+            <Route path='admin/*' element={<Admin />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </DbContentsProvider>
       </AuthProvider>
     </ BrowserRouter>
   )

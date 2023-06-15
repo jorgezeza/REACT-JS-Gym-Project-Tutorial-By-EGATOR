@@ -1,7 +1,13 @@
+import { useContext } from "react"
 import { MdOutlineContentPasteGo } from "react-icons/md"
 import { NavLink } from "react-router-dom"
+import { DbContext } from "../contexts/db"
+// import { db } from "../services/firebase"
+// import { doc, setDoc, collection, getDocs } from "firebase/firestore"
 
 const NavbarADM = () => {
+  const { nameDocs } = useContext(DbContext)
+
   return (
     <>
       <div className="nav__container-adm">
@@ -12,32 +18,26 @@ const NavbarADM = () => {
         <div className="divider"></div>
         <div className="nav__menu-adm">
           <ul>
-            <li>
-              <NavLink>Programs</NavLink>
-            </li>
-            <li>
-              <NavLink>Values</NavLink>
-            </li>
-            <li>
-              <NavLink>FAQs</NavLink>
-            </li>
-            <li>
-              <NavLink>Testimonials</NavLink>
-            </li>
-            <li>
-              <NavLink>Gallery</NavLink>
-            </li>
-            <li>
-              <NavLink>Plans</NavLink>
-            </li>
-            <li>
-              <NavLink>Trainers</NavLink>
-            </li>
+            {nameDocs.map((nameLi) => {
+              return (
+                <li key={nameLi}>
+                  <NavLink to={nameLi}>{nameLi}</NavLink>
+                </li>
+              )
+            })}
+
           </ul>
         </div>
+        <button className="btn lg" >Create new entry</button>
       </div>
     </>
   )
 }
+
+// const handleSetDoc = async () => {
+//   await setDoc(doc(db, "Testimonials", "04"), {})
+//   console.log('Cadastrou')
+// }
+
 
 export default NavbarADM

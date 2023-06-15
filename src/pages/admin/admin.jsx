@@ -1,11 +1,26 @@
+import { useEffect, useState, useContext } from "react"
 import Header from "../../components/Header"
 import ADMGym from "../../images/ADMGym.jpg"
 import NavbarADM from "../../components/NavbarADM"
 import ContentADM from "../../components/ContentADM"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, useLocation } from "react-router-dom"
+import { DbContext } from "../../contexts/db"
+
 import "./admin.css"
 
 const Admin = () => {
+  const { nameDocs } = useContext(DbContext)
+  const [nameTitleAndPath, setNameTitleAndPath] = useState('')
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    nameDocs.forEach(nameDoc => {
+      if (pathname === `/admin/${nameDoc}`) {
+        setNameTitleAndPath(nameDoc)
+      }
+    })
+  }, [pathname])
+
   return (
     <>
       <Header title='Dashboard' image={ADMGym} >
@@ -13,11 +28,12 @@ const Admin = () => {
         Dolor quidem saepe, dignissimos nobis et similique quae autem nam cumque modi.
       </Header>
       <div className="container__adm" >
-        <Routes>
-          <Route path="/" element={<NavbarADM />} />
-        </Routes>
+        <NavbarADM />
 
-        <ContentADM />
+        <Routes>
+          <Route path='/' element={<ContentADM title={nameTitleAndPath} />} />
+          <Route path={`/${nameTitleAndPath}`} element={<ContentADM title={nameTitleAndPath} />} />
+        </Routes>
       </div>
     </>
   )

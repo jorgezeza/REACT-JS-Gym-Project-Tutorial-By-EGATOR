@@ -18,7 +18,6 @@ const Login = () => (
       <Route path="/create" element={<LoginCreate />} />
       <Route path="/forgot" element={<ForgotPassword />} />
       <Route path="/*" element={<NotFound />} />
-
     </Routes>
   </>
 )
