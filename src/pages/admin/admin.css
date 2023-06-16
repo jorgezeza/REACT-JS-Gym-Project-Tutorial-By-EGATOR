@@ -1,0 +1,150 @@
+.container__adm{
+  display: flex;
+  gap: 2.25rem;
+}
+
+.container__content-adm {
+  width: 100%;
+}
+
+
+.nav__container-adm {
+  width: 280px;
+  background: var(--color-gray-500);
+}
+
+.nav__header-adm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 12px 0;
+}
+
+.nav__header-adm svg {
+  font-size: 1.5rem;
+}
+
+.divider {
+  content: '';
+  width: 100%;
+  background:  rgba(255, 255, 255, .3);
+  height: 1px;
+}
+
+.nav__menu-adm ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__menu-adm li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  width: 100%;
+}
+
+.nav__menu-adm li a {
+  display: block;
+  margin-left: 2.25rem;
+  box-sizing: content-box;
+}
+
+.nav__menu-adm li:hover,
+.nav__menu-adm li a:hover {
+  background: var(--color-secondary);
+  color: var(--color-gray-600);
+  cursor: pointer;
+}
+
+
+
+
+
+
+.content__header-adm {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 2.25rem;
+}
+
+.content__header-adm button {
+  max-height: 3.813rem;
+  margin-right: 6.25rem;
+}
+
+
+
+
+
+
+
+
+
+.content__wrapper {
+  display: block;
+  width: 57rem;
+  background: var(--color-gray-500);
+  margin-top: 2.25rem;
+  overflow:hidden;
+  border-radius: 0 100px 0 100px;
+}
+
+.container__table {
+  display: block;
+  width: 840px;
+  margin: 3.375rem 2rem;
+}
+
+.container__table thead tr th:nth-child(1){
+  width: 60%;
+}
+
+.container__table thead tr th:nth-child(2){
+  width: 25%;
+}
+
+.container__table thead tr th:nth-child(3){
+  width: 15%;
+}
+
+.table__header {
+  padding: 50px;
+  background: var(--color-gray-400);
+}
+
+.table__body {
+  background: var(--color-gray-600)
+}
+
+.table__header th,
+.table__body td {
+  padding: 1rem;
+  border: 1px solid;
+}
+
+.wrapper__icons {
+  display: flex;
+}
+
+.icon__table {
+  font-size: 22px;
+  padding: 1rem;
+}
+
+.icon__table:hover {
+  background: var(--color-secondary);
+  color: var(--color-gray-600);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+.nav__container-adm .btn {
+  margin: 2rem 5%;
+}
