@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 
 const types = {
   email: {
@@ -48,7 +48,8 @@ const useForm = (type) => {
     onChange,
     onBlur: (value) => validate(value.target.value),
     error,
-    validate
+    validate,
+    setValue
   }
 }
 

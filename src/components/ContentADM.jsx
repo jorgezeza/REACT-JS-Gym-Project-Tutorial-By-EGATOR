@@ -1,13 +1,11 @@
 import { FiEdit2 } from "react-icons/fi"
 import { AiOutlineDelete } from "react-icons/ai"
+import TitleADM from "./TitleADM"
 
 const ContentADM = ({ title }) => {
   return (
     <div className="container__content-adm" >
-      <div className="content__header-adm">
-        <h1>{title}</h1>
-        <button className="btn lg" >Create new entry</button>
-      </div>
+      <TitleADM title={title} />
 
       <div className="content__wrapper">
         <table className="container__table">

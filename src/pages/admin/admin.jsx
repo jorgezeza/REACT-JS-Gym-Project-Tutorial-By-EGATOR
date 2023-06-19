@@ -3,6 +3,7 @@ import Header from "../../components/Header"
 import ADMGym from "../../images/ADMGym.jpg"
 import NavbarADM from "../../components/NavbarADM"
 import ContentADM from "../../components/ContentADM"
+import Form from "../../components/Form"
 import { Routes, Route, useLocation } from "react-router-dom"
 import { DbContext } from "../../contexts/db"
 
@@ -19,7 +20,7 @@ const Admin = () => {
         setNameTitleAndPath(nameDoc)
       }
     })
-  }, [pathname])
+  }, [pathname, nameDocs])
 
   return (
     <>
@@ -33,6 +34,7 @@ const Admin = () => {
         <Routes>
           <Route path='/' element={<ContentADM title={nameTitleAndPath} />} />
           <Route path={`/${nameTitleAndPath}`} element={<ContentADM title={nameTitleAndPath} />} />
+          <Route path='/form' element={<Form title='Register Section' />} />
         </Routes>
       </div>
     </>

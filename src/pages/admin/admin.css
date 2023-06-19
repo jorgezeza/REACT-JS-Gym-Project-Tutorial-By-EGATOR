@@ -145,6 +145,42 @@
 
 
 
-.nav__container-adm .btn {
+.nav__container-adm .btn.lg {
+  display: block;
   margin: 2rem 5%;
+  padding: 1.2rem 1rem;
+}
+
+
+.form__container {
+  width: 37rem;
+  margin: 2.25rem auto;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin: 3rem;
+  justify-content: flex-end;
+  /* width: 100%; */
+}
+
+.form__wrapper label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  max-width: 31.25rem;
+}
+
+.form__wrapper input {
+  max-width: 31.25rem;
+  padding: 0.875rem;
+  border-radius: 14px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form__wrapper button {
+  margin: 0;
+  align-self: flex-end;
 }
